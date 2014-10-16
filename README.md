@@ -23,7 +23,7 @@ Here's what the application looks like :
 - Possibility to close Chrome-Shark using the `Esc` key or the `Close button` at the upper right of the screen
 - Regularly flip itself to not burn TV pixels
 - User friendly interface
-![Features](http://i.imgur.com/vZW6e2I.png)
+![Features](http://i.imgur.com/8MPC6bU.png)
 ![Detail features](http://i.imgur.com/hvGWDeZ.png)
 
 ##TODO
