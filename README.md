@@ -28,7 +28,7 @@ Here's what the application looks like :
 
 ##TODO
 - [ ] Assure that the album art scale correctly when resizing the screen
-- [ ] Create a `JavaScript` bookmark to be able to call the app easly
+- [x] Create a `JavaScript` bookmark to be able to call the app easly
 - [x] Create the web page for the app
 - [x] Create the UI
 - [x] Get and auto update the data according to the current song
