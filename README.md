@@ -9,7 +9,7 @@ For more detail go to the [official website](http://tareck117.github.io/chrome-s
 
 ##How does it work
 
-Simply go to the [official website](http://tareck117.github.io/chrome-shark/), go to the Bookmark section and **drag and drop the bookmark button to your bookmarks** (not yet released)
+Simply go to the [official website](http://tareck117.github.io/chrome-shark/), go to the Bookmarklet section and **drag and drop the bookmark button to your bookmarks**
 
 Here's what the application looks like : 
 
