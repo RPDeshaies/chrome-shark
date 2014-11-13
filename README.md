@@ -25,13 +25,3 @@ Here's what the application looks like :
 - User friendly interface
 ![Features](http://i.imgur.com/8MPC6bU.png)
 ![Detail features](http://i.imgur.com/hvGWDeZ.png)
-
-##TODO
-- [ ] Assure that the album art scale correctly when resizing the screen
-- [x] Create a `JavaScript` bookmark to be able to call the app easly
-- [x] Create the web page for the app
-- [x] Create the UI
-- [x] Get and auto update the data according to the current song
-- [x] Create Play/Pause, Next and Previous controls that activate the real controls and activly update their UI.
-- [x] Get the album art from Last.FM
-- [x] Get the artist' summary from Last.FM
