@@ -3,7 +3,7 @@
 
 ## What is this ?
 
-Chrome Shark is a JavaScript application that transform Grooveshark into a great full screen music player to fit on your Television
+Chrome Shark is a JavaScript application that transform Grooveshark & Spotify into a great full screen music player to fit on your Television
 
 For more detail go to the [official website](http://tareck117.github.io/chrome-shark/)
 
@@ -14,6 +14,13 @@ Simply go to the [official website](http://tareck117.github.io/chrome-shark/), g
 Here's what the application looks like : 
 
 ![Chrome Shark Interface](http://i.imgur.com/31bVo4X.jpg)
+
+##Supporting
+Now supporting Spotify !
+<br>
+<img src="http://grooveshark.com/webincludes/images/shareDefault200x200.png" alt="Grooveshark" width="75px">
+<img src="http://upload.wikimedia.org/wikipedia/commons/8/8e/Spotify_logo_vertical_white.jpg" alt="Spotify" width="75px">
+
 
 ##Features
 - Fits perfectly for TVs
