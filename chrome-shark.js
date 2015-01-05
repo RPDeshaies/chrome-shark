@@ -107,7 +107,7 @@ var ChromeShark = (function() {
                 //The album art to load from the songs meta data
                 var $albumArt = $("<img class='chrome-shark-album-art'>").css({
                     "width": "100%",
-                    "height": "auto",
+                    "height": "100%",
                 });
 
                 $albumArtContainer.append($albumArt);
@@ -126,11 +126,12 @@ var ChromeShark = (function() {
                     "border-radius": "10px",
                     "min-width": "400px",
                     "min-height": "270px",
+                    "overflow-y": "scroll",
                 });
                 var $metaDataHeader = $("<span>Now playing | <a class='chrome-shark-close-button'>Close</a></span>").css({
                     "color": "#EBEBEB",
                     "float": "right",
-                    "padding-top": "2px",
+                    "padding-top": "15px",
                     "font-size": "12pt",
                     "font-weight": "normal",
                 });
@@ -165,7 +166,10 @@ var ChromeShark = (function() {
                     "text-align": "left",
                 }).append($metaDataHeader)
                 //Append the ChromeShark logo
-                .append("<img width='200px' src='https://i.imgur.com/iqirIU4.png'>");
+                .append("<span class='logo-chrome-shark'>" + 
+                    "<span class='logo-chrome'>Chrome</span>" + 
+                    "<span class='logo-shark'>Shark</span>" + 
+                "</span>");
 
                 //Contains all the metadata of the songs
                 $metaDataContainer.append("<div class='chrome-shark-track-info'>"
@@ -197,6 +201,20 @@ var ChromeShark = (function() {
                   + " </span>"
                   + "</div>");
 
+                $gsToolbar.find(".logo-chrome").css({
+                    "font-family" : "'Righteous', cursive",
+                    "font-style" : "normal",
+                    "color" : "#d85117",
+                    "font-size" : "20pt",
+                });
+
+                $gsToolbar.find(".logo-shark").css({
+                    "font-family" : "'Righteous', cursive",
+                    "font-style" : "normal",
+                    "color" : "#adadad",
+                    "font-size" : "20pt",
+                });
+
                 //Style all the meta-data informations
                 $metaDataContainer.find(".chrome-shark-title").css({
                     "font-size": "20pt",
@@ -227,6 +245,7 @@ var ChromeShark = (function() {
                     "border-radius": "7px",
                     "color": "white",
                     "margin-bottom": "40px",
+                    "min-height": "100px",
                 });
                 //We set the title's style
                 $metaDataContainer.find(".chrome-shark-track-controls .chrome-shark-time-elapsed-total").css({
@@ -242,6 +261,7 @@ var ChromeShark = (function() {
                     "width": "100%",
                     "border-radius": "4px",
                     "position": "relative",
+                    "margin": "10px 0px 10px 0px",
                 });
                 $metaDataContainer.find(".chrome-shark-progress-bar-current-progress").css({
                     "position": "absolute",
@@ -434,7 +454,12 @@ var ChromeShark = (function() {
                 success: function(data) {
                     var artist = data.artist;
                     if (artist && artist.bio.summary) {
+                        
                         $(".chrome-shark-artist-bio-summary").html(artist.bio.summary);
+
+                        $(".chrome-shark-artist-bio-summary").find("a").css({
+                            "color" : "#4A4A4A",
+                        });
                         $(".chrome-shark-artist-bio").fadeIn();
                         thisRef.artistBio = artist.bio.summary;
 
