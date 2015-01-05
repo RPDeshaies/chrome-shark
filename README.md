@@ -16,7 +16,10 @@ Here's what the application looks like :
 ![Chrome Shark Interface](http://i.imgur.com/31bVo4X.jpg)
 
 ##Supporting
-Now supporting Spotify !
+
+ * Grooveshark
+ * [NEW] Now supporting Spotify !
+
 <br>
 <img src="http://grooveshark.com/webincludes/images/shareDefault200x200.png" alt="Grooveshark" width="75px">
 <img src="http://upload.wikimedia.org/wikipedia/commons/8/8e/Spotify_logo_vertical_white.jpg" alt="Spotify" width="75px">
