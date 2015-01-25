@@ -499,7 +499,7 @@ var ChromeShark = (function() {
       var thisRef = this;
       clearTimeout(this.flipTimeout);
       this.flipTimeout = setTimeout(function() {
-        thisRef.flip();
+        thisRef.Flip();
       }, properties.flipTime);
     };
     /**
