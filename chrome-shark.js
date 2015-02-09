@@ -408,7 +408,7 @@ var ChromeShark = (function() {
               thisRef.currentlyLoadingImage = false;
               $(".chrome-shark-album-art").after($newAlbumArt).remove();
               //We fade in the album art that replaced the old one
-              $(".chrome-shark-album-art").stop(true, true).fadeIn();
+              $(".chrome-shark-album-art").stop(true, true).show();
             });
           }
           //Refresh the songs times
@@ -448,33 +448,33 @@ var ChromeShark = (function() {
           //Get the artist information
           $.ajax("https://ws.audioscrobbler.com/2.0/?method=artist.getInfo&api_key=" + properties.lastFmApiKey + "&artist=" + encodeURI(thisRef.artist) + "&format=json", {
             success: function(data) {
-              var artist = data.artist;
-              var largestArtistImageUrl = artist.image[artist.image.length - 1]["#text"];
+              if (data && data.artist) {
+                if(data.artist.image){
+                  var artist = data.artist;
+                  var largestArtistImageUrl = artist.image[artist.image.length - 1]["#text"];
 
-              if (artist && artist.bio.summary) {
+                  //Since there is no image for this album, we use the artist image if it exists
+                  if(thisRef.albumArtUrl == properties.defaultAlbumArtUrl && largestArtistImageUrl){
+                    thisRef.albumArtUrl = largestArtistImageUrl;
+                  }
+                }
 
-                $(".chrome-shark-artist-bio-summary").html(artist.bio.summary);
-
-                $(".chrome-shark-artist-bio-summary").find("a").css({
-                  "color": "#4A4A4A",
-                });
-                $(".chrome-shark-artist-bio").fadeIn();
-                thisRef.artistBio = artist.bio.summary;
-
-              } else {
-                $(".chrome-shark-artist-bio-summary").empty();
-                $(".chrome-shark-artist-bio").hide();
-                thisRef.artistBio = "";
-              }//end else
-
-              //Since there is no image for this album, we use the artist image if it exists
-              if(thisRef.albumArtUrl == properties.defaultAlbumArtUrl && largestArtistImageUrl){
-                thisRef.albumArtUrl = largestArtistImageUrl;
-              }
-
+                if(artist.bio.summary){
+                  $(".chrome-shark-artist-bio-summary").html(artist.bio.summary);
+                  thisRef.artistBio = artist.bio.summary;
+                  $(".chrome-shark-artist-bio-summary").find("a").css({
+                    "color": "#4A4A4A",
+                  });
+                  $(".chrome-shark-artist-bio").show();
+                }
+                else {
+                  $(".chrome-shark-artist-bio-summary").empty();
+                  $(".chrome-shark-artist-bio").hide();
+                  thisRef.artistBio = "";
+                }//end else
+              }//end if
             }//end success
           });//end ajax
-
         }//end success
       });//end ajax
     }//end GetLastFmData()
