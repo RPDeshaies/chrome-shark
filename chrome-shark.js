@@ -1,27 +1,7 @@
 /*
 Snippet to include as the anchor `href` :
-
-//test
-javascript: (function() {
-  var protocol = window.location.protocol === 'file:' ? 'http:' : '';
-  var url = protocol + '//www.sprymedia.co.uk/VisualEvent/VisualEvent_Loader.js';
-  if (typeof VisualEvent != 'undefined') {
-    if (VisualEvent.instance !== null) {
-    VisualEvent.close();
-    } else {
-    new VisualEvent();
-    }
-  } else {
-    var n = document.createElement('script');
-    n.setAttribute('language', 'JavaScript');
-    n.setAttribute('src', url + '?rand=' + new Date().getTime());
-    document.body.appendChild(n);
-  }
-})();
-
+javascript:(function(){if(typeof ChromeShark!="undefined"){if(window.chromeShark){window.chromeShark.ToggleShow()}else{window.chromeShark=new ChromeShark}}else{var url=location.protocol+"//tareck117.github.io/chrome-shark/js/app/chrome-shark.min.js";var script=document.createElement("script");script.setAttribute("language","JavaScript");script.setAttribute("src",url+"?rand="+(new Date).getTime());document.body.appendChild(script)}})()
 */
-
-
 
 /**
 * Generate a full screen UI for Grooveshark that auto updates and get meta datas from the Last.fm API
@@ -61,28 +41,49 @@ var ChromeShark = (function() {
     * @return {bool} If the player info exists
     */
     function InitializePlayerInfo() {
-      if (!this.playerInfo || !this.playerInfo.$song || this.playerInfo.$song.length == 0) {
+      if (!this.playerInfo || !this.playerInfo.GetSong() || this.playerInfo.GetSong().length == 0) {
         //Determines if the interface the Chromeshark is going to put in full screen is from Grooveshark or Spotify
         if (this.chromeSharkInterface == this.Interface.Grooveshark) {
           this.playerInfo = {
-            $song: $("#now-playing-metadata .song"),
-            $artist: $("#now-playing-metadata .artist"),
-            $timeElapsed: $("#now-playing #time-elapsed"),
-            $timeTotal: $("#now-playing #time-total"),
-            $controls: $("#play-controls"),
+            GetSong : function (){
+              return $("#now-playing-metadata .song");
+            },
+            GetArtist : function (){
+              return $("#now-playing-metadata .artist");
+            },
+            GetTimeElapsed : function (){
+              return $("#now-playing #time-elapsed");
+            },
+            GetTimeTotal : function (){
+              return $("#now-playing #time-total");
+            },
+            GetControls : function (){
+              return $("#play-controls");
+            },
           };
         } else {
+          //Spotify player info
           this.playerInfo = {
-            $song: $("iframe#app-player").contents().find("#track-name"),
-            $artist: $("iframe#app-player").contents().find("#track-artist"),
-            $timeElapsed: $("iframe#app-player").contents().find("#track-current"),
-            $timeTotal: $("iframe#app-player").contents().find("#track-length"),
-            $controls: $("iframe#app-player").contents().find("#controls"),
+            GetSong : function (){
+              return $("iframe#app-player").contents().find("#track-name");
+            },
+            GetArtist : function (){
+              return $("iframe#app-player").contents().find("#track-artist");
+            },
+            GetTimeElapsed : function (){
+              return $("iframe#app-player").contents().find("#track-current");
+            },
+            GetTimeTotal : function (){
+              return $("iframe#app-player").contents().find("#track-length");
+            },
+            GetControls : function (){
+              return $("iframe#app-player").contents().find("#controls");
+            },
           };
         }
       }
 
-      return this.playerInfo.$song && this.playerInfo.$song.length != 0;
+      return this.playerInfo.GetSong() && this.playerInfo.GetSong().length != 0;
     }
     // ------------------------------------------------------------------------
     //Priviliged methods
@@ -143,10 +144,11 @@ var ChromeShark = (function() {
           "border-radius": "10px",
           "min-width": "400px",
           "min-height": "270px",
-          "overflow-y": "scroll",
+          "overflow-y": "auto",
         });
+        
         var $metaDataHeader = $("<span>Now playing | <a class='chrome-shark-close-button'>Close</a></span>").css({
-          "color": "#EBEBEB",
+          "color": "#00B0D0",
           "float": "right",
           "padding-top": "10px",
           "font-size": "12pt",
@@ -156,11 +158,7 @@ var ChromeShark = (function() {
         //Close Chrome-Shark if the user press on the `esc` key
         $(document).keyup(function(e) {
           if (e.keyCode === 27) {
-            if (thisRef.IsUIVisible()) {
-              thisRef.Close();
-            } else {
-              chromeShark.Show();
-            }
+              thisRef.ToggleShow();
           }
         });
 
@@ -170,7 +168,7 @@ var ChromeShark = (function() {
           thisRef.Close();
         });
 
-        var $gsToolbar = $("<div class='chrome-shark-gs-toolbar'>").css({
+        var $toolbar = $("<div class='chrome-shark-toolbar'>").css({
           "transform": "translateZ(0)",
           "padding": "12px",
           "-ms-transition": ".3s",
@@ -189,16 +187,43 @@ var ChromeShark = (function() {
         "</span>");
 
         //Contains all the metadata of the songs
-        $metaDataContainer.append("<div class='chrome-shark-track-info'>" + "    <span>" + "        <span class='chrome-shark-title'></span>" + "        <div class='chrome-shark-artist-container'>" + "            <span class='chrome-shark-artist-prefix'>by </span><span class='chrome-shark-artist'></span>" + "        </div>" + "    </span>" + "</div>" + "<div class='chrome-shark-track-controls'> " + "    <span class='chrome-shark-time-elapsed-total' style='color:white'>" + "        <span class='chrome-shark-time-elapsed'></span> / <span class='chrome-shark-time-total'></span>" + "    </span>" + "    <div class='chrome-shark-progress-bar-container'>" + "     <div class='chrome-shark-progress-bar'>" + "       <div class='chrome-shark-progress-bar-current-progress'>" + "       </div>" + "     </div>" + "    </div>" + "</div>" + "<div class='chrome-shark-artist-bio' style='display:none'>" + " <span class='chrome-shark-artist-summary-title'>Artist summary </span>" + " <p class='chrome-shark-artist-bio-summary'></p>" + "</div>" + "<div class='chrome-shark-track-no-info'>" + " <span>No songs are currently playing." + " </br>Close Chrome-Shark and add some !" + " </span>" + "</div>");
+        $metaDataContainer.append("<div class='chrome-shark-track-info'>" +
+        "    <span>" +
+        "        <span class='chrome-shark-title'></span>" +
+        "        <div class='chrome-shark-artist-container'>" +
+        "            <span class='chrome-shark-artist-prefix'>by </span><span class='chrome-shark-artist'></span>" +
+        "        </div>" +
+        "    </span>" +
+        "</div>" +
+        "<div class='chrome-shark-track-controls'> " +
+        "    <span class='chrome-shark-time-elapsed-total' style='color:white'>" +
+        "        <span class='chrome-shark-time-elapsed'></span> / <span class='chrome-shark-time-total'></span>" +
+        "    </span>" +
+        "    <div class='chrome-shark-progress-bar-container'>" +
+        "     <div class='chrome-shark-progress-bar'>" +
+        "       <div class='chrome-shark-progress-bar-current-progress'>" +
+        "       </div>" +
+        "     </div>" +
+        "    </div>" +
+        "</div>" +
+        "<div class='chrome-shark-artist-bio' style='display:none'>" +
+        " <span class='chrome-shark-artist-summary-title'>Artist summary </span>" +
+        " <p class='chrome-shark-artist-bio-summary'></p>" +
+        "</div>" +
+        "<div class='chrome-shark-track-no-info'>" +
+        " <span>No songs are currently playing." +
+        " </br>Close Chrome-Shark and add some !" +
+        " </span>" +
+        "</div>");
 
-        $gsToolbar.find(".logo-chrome").css({
+        $toolbar.find(".logo-chrome").css({
           "font-family": "'Righteous', cursive",
           "font-style": "normal",
-          "color": "#d85117",
+          "color": "#00B0D0",
           "font-size": "20pt",
         });
 
-        $gsToolbar.find(".logo-shark").css({
+        $toolbar.find(".logo-shark").css({
           "font-family": "'Righteous', cursive",
           "font-style": "normal",
           "color": "#adadad",
@@ -279,7 +304,7 @@ var ChromeShark = (function() {
           "text-align": "center",
           "background": "linear-gradient(#111119 0%, #0C3A5F 100%)",
           "filter": "progid:DXImageTransform.Microsoft.gradient( startColorstr='#000c1f', endColorstr='#00203a',GradientType=0 )",
-        }).append($gsToolbar).append($metaDataContainer);
+        }).append($toolbar).append($metaDataContainer);
 
         $chromeShark.append($albumArtContainer).append($metaData);
 
@@ -301,10 +326,10 @@ var ChromeShark = (function() {
         $metaDataContainer = $metaDataContainer || $(".chrome-shark-meta-data-container");
         if ($metaDataContainer) {
           //We clone the controls to keep the layout but not the events since it's causing performance problems
-          thisRef.$playControls = thisRef.playerInfo.$controls.clone().removeAttr("id").addClass("chrome-shark-track-controls-button").css({
+          thisRef.$playControls = thisRef.playerInfo.GetControls().clone().removeAttr("id").addClass("chrome-shark-track-controls-button").css({
             "margin-left": "auto",
             "margin-right": "auto",
-            "margin-bottom": "100px",
+            "margin-bottom": "50px",
             "width": "90px",
           });
           //We manually trigger the events when a controls is clicked
@@ -342,10 +367,10 @@ var ChromeShark = (function() {
       var playerExists = InitializePlayerInfo.call(thisRef);
 
       if (playerExists) {
-        var newSongTitle = thisRef.playerInfo.$song.text();
-        var newArtist = thisRef.playerInfo.$artist.text();
-        var newTimeElapsed = thisRef.playerInfo.$timeElapsed.text().trim() || "0:00";
-        var newTimeTotal = thisRef.playerInfo.$timeTotal.text().trim() || "0:00";
+        var newSongTitle = thisRef.playerInfo.GetSong().text();
+        var newArtist = thisRef.playerInfo.GetArtist().text();
+        var newTimeElapsed = thisRef.playerInfo.GetTimeElapsed().text().trim() || "0:00";
+        var newTimeTotal = thisRef.playerInfo.GetTimeTotal().text().trim() || "0:00";
 
         if (!newSongTitle || !newArtist) {
           //There no track in the current playlist, we show the "no information" DOM to notifiy the user
@@ -572,14 +597,25 @@ var ChromeShark = (function() {
   // ------------------------------------------------------------------------
 
   /**
+   * Show or hide the UI depending if it is visible or not.
+   */
+  ChromeShark.prototype.ToggleShow = function(){
+    if (this.IsUIVisible()) {
+      this.Close();
+    } else {
+      this.Show();
+    }
+  }
+
+  /**
   * Add a script to download inside of the head of the page and call a method when the script is loaded
-  * @url : The url of the script to download
+  * @src : The url of the script to download
   * @callback : The method to call when the script is loaded
   */
-  ChromeShark.prototype.GetScript = function(url, callback) {
+  ChromeShark.prototype.GetScript = function(src, callback) {
     var script = document.createElement('script');
     script.type = 'text/javascript';
-    script.src = url;
+    script.src = src;
     // most browsers
     script.onload = callback;
     // IE 6 & 7
@@ -588,7 +624,7 @@ var ChromeShark = (function() {
         callback();
       }
     }
-    document.getElementsByTagName('head')[0].appendChild(script);
+    document.body.appendChild(script);
   };
 
   ChromeShark.prototype.Interface = {
@@ -600,8 +636,9 @@ var ChromeShark = (function() {
 })();
 
 if (typeof ChromeShark != 'undefined') {
+  debugger
   if (window.chromeShark) {
-    window.chromeShark.Close();
+    window.chromeShark.ToggleShow();
   } else {
     window.chromeShark = new ChromeShark();
   }
