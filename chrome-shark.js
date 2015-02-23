@@ -146,13 +146,17 @@ var ChromeShark = (function() {
           "min-height": "270px",
           "overflow-y": "auto",
         });
-        
+
         var $metaDataHeader = $("<span>Now playing | <a class='chrome-shark-close-button'>Close</a></span>").css({
-          "color": "#00B0D0",
+          "color": "white",
           "float": "right",
           "padding-top": "10px",
           "font-size": "12pt",
           "font-weight": "normal",
+        })
+        
+        $metaDataHeader.find(".chrome-shark-close-button").css({
+          "color" : "#00B0D0"
         });
 
         //Close Chrome-Shark if the user press on the `esc` key
@@ -636,7 +640,6 @@ var ChromeShark = (function() {
 })();
 
 if (typeof ChromeShark != 'undefined') {
-  debugger
   if (window.chromeShark) {
     window.chromeShark.ToggleShow();
   } else {
