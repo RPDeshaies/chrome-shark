@@ -186,7 +186,7 @@ var ChromeShark = (function() {
         }).append($metaDataHeader)
         //Append the ChromeShark logo
         .append("<span class='logo-chrome-shark'>" +
-        "<span class='logo-chrome'>Chrome</span>" +
+        "<span class='logo-chrome'>Chrome </span>" +
         "<span class='logo-shark'>Shark</span>" +
         "</span>");
 
@@ -221,14 +221,14 @@ var ChromeShark = (function() {
         "</div>");
 
         $toolbar.find(".logo-chrome").css({
-          "font-family": "'Righteous', cursive",
+          "font-family": '"Helvetica Neue",Helvetica,Arial,sans-serif',
           "font-style": "normal",
           "color": "#00B0D0",
           "font-size": "20pt",
         });
 
         $toolbar.find(".logo-shark").css({
-          "font-family": "'Righteous', cursive",
+          "font-family": '"Helvetica Neue",Helvetica,Arial,sans-serif',
           "font-style": "normal",
           "color": "#adadad",
           "font-size": "20pt",
