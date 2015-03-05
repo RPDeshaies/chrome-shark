@@ -1,0 +1,65 @@
+<div class="chrome-shark" ng-controller="ChromeShark.MainController">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <div class="chrome-shark-album-art-container">
+        <img class="chrome-shark-album-art" ng-src="{{albumArtUrl}}" fade-in>
+    </div>
+    <div class="chrome-shark-meta-data">
+        <div class="chrome-shark-toolbar">
+            <div class="logo-chrome-shark">
+                <span class="logo-chrome">Chrome</span>
+                <span class="logo-shark">Shark</span>
+            </div>
+            <div class="menu-chrome-shark">
+                Now playing
+                <span class="separator"> | </span>
+                <a class="chrome-shark-menu-button" ng-click="CloseButtonClicked()">Close</a>
+                <span class="separator"> | </span>
+                <a class="chrome-shark-menu-button" ng-click="HelpButtonClicked()">
+                  Help
+                  <i class="fa fa-question-circle"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="chrome-shark-meta-data-container">
+            <div class="chrome-shark-nothing-playing" ng-show="!trackName">
+                <span>No songs are currently playing. <br>Close Chrome Shark and add some ! </span>
+            </div>
+            <div class="chrome-shark-meta-data-wrapper" ng-show="trackName">
+                <div class="chrome-shark-track-info">
+                    <div>
+                        <span class="chrome-shark-title">{{trackName}}</span>
+                        <div class="chrome-shark-artist-container">
+                            <span class="chrome-shark-artist-prefix"> by </span>
+                            <span class="chrome-shark-artist">{{trackArtist}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chrome-shark-track-controls">
+                    <div class="chrome-shark-time-elapsed-total">
+                        <span class="chrome-shark-time-elapsed">{{timeStart}}</span>
+                        <span class="separator"> / </span>
+                        <span class="chrome-shark-time-total">{{timeEnd}}</span>
+                    </div>
+                    <div class="chrome-shark-player-controls">
+                      <i class="fa fa-step-backward fa-lg fa-2x" ng-click="PreviousButtonClicked()"></i>
+                      <i class="fa fa-play fa-lg fa-2x" ng-click="PlayPauseButtonClicked()"></i>
+                      <i class="fa fa-step-forward fa-lg fa-2x" ng-click="NextButtonClicked()"></i>
+                    </div>
+                    <div class="chrome-shark-progress-bar-container">
+                        <div class="chrome-shark-progress-bar">
+                            <div class="chrome-shark-progress-bar-current-progress" ng-style="{width : percentageElapsed + '%'}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="chrome-shark-artist-bio" ng-show="artistSummary">
+                    <span class="chrome-shark-artist-summary-title">Artist summary</span>
+                    <p class="chrome-shark-artist-bio-summary" ng-bind-html="artistSummary">
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
