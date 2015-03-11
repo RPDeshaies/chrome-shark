@@ -1,0 +1,112 @@
+// out: minified/styles.min.css, compress: true
+//Variables
+@import (less) "variables.less";
+//Mixin
+.gradient {
+  background: linear-gradient(rgb(17, 17, 25) 0%, rgb(12, 58, 95) 100%);
+}
+//Style
+.chrome-shark {
+  display: block;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 99999999999;
+  @import (less) "bootstrap-3.3.2/bootstrap.min.css";
+  //Album Art
+  .chrome-shark-album-art-container {
+    display: block;
+    width: 55%;
+    height: 100%;
+    z-index: 99999999999;
+    float: left;
+    .chrome-shark-album-art {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  //Meta data
+  .chrome-shark-meta-data {
+    display: block;
+    width: 45%;
+    height: 100%;
+    z-index: 99999999999;
+    float: right;
+    position: relative;
+    font-family: sans-serif;
+    .gradient;
+    //Toolbar
+    .chrome-shark-toolbar {
+      transform: translateZ(0px);
+      padding: 12px;
+      -webkit-transform: translateZ(0px);
+      min-width: 400px;
+      text-align: left;
+    }
+    .logo-chrome-shark {
+      padding-top: 10px;
+      float: left;
+      //Override
+      display: inline !important;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+      font-size: 26.6666660308838px !important;
+      font-style: normal !important;
+      font-weight: normal !important;
+      height: auto !important;
+      line-height: 20px !important;
+      text-align: left !important;
+      width: auto !important;
+      .logo-chrome {
+        color: @teal !important;
+      }
+      .logo-shark {
+        color: @white !important;
+      }
+    }
+    .menu-chrome-shark {
+      padding-top: 10px;
+      float: right;
+      //Override
+      color: @white !important;
+      display: block !important;
+      float: right !important;
+      font-family: sans-serif !important;
+      font-size: 16px !important;
+      font-weight: normal !important;
+      height: 20px !important;
+      line-height: 20px !important;
+      text-align: left !important;
+      .chrome-shark-menu-button {
+        color: @teal !important;
+        text-decoration: none !important;
+        border-bottom: none !important;
+      }
+    }
+    //Meta data content
+    .chrome-shark-content {
+      padding: 20px;
+      margin: 80px 50px 20px;
+      display: block;
+      position: absolute;
+      height: auto;
+      bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      border-radius: 10px;
+      min-width: 400px;
+      min-height: 270px;
+      overflow-y: auto;
+      background-color: @white;
+      .chrome-shark-view-player {
+        text-align: center;
+        @import (less) "views/view-player.less";
+      }
+      .chrome-shark-view-help {
+        @import (less) "views/view-help.less";
+      }
+    }
+  }
+}

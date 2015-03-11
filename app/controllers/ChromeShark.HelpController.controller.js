@@ -1,6 +1,8 @@
 //https://developer.chrome.com/extensions/tut_analytics
 
-chromeShark.controller("ChromeShark.HelpController", ["$scope", function($scope){
+chromeShark.controller("ChromeShark.HelpController", ["$scope", "ChromeShark.ViewStateFactory", function($scope, ViewState){
+  $scope.viewState = ViewState;
+  
   $scope.quickLinks = [
     {
       title : "Website",

@@ -2,7 +2,7 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <div class="chrome-shark-album-art-container">
-        <img class="chrome-shark-album-art" ng-src="{{albumArtUrl}}" fade-in>
+        <img class="chrome-shark-album-art" ng-src="{{albumArt.src}}" fade-in>
     </div>
     <div class="chrome-shark-meta-data">
         <div class="chrome-shark-toolbar">
@@ -29,11 +29,11 @@
         </div>
 
         <div class="chrome-shark-content">
-          <div class="chrome-shark-view" ng-show="state == 'player'">
-            <div ag-include="'app/views/chrome-shark-content-player.html'"></div>
+          <div class="chrome-shark-view-player" ng-show="viewState.current == 'player'">
+            <div ag-include="'app/views/chrome-shark-view-player.html'"></div>
           </div>
-          <div class="chrome-shark-view" ng-show="state == 'help'">
-            <div ag-include="'app/views/chrome-shark-content-help.html'"></div>
+          <div class="chrome-shark-view-help" ng-show="viewState.current == 'help'">
+            <div ag-include="'app/views/chrome-shark-view-help.html'"></div>
           </div>
         </div>
     </div>

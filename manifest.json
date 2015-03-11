@@ -30,7 +30,7 @@
   "content_scripts": [{
     "matches": ["<all_urls>"],
     "css": [
-      "app/css/style.min.css"
+      "app/css/minified/styles.min.css"
     ],
     "js": [
       "app/lib/jquery-1.11.2.min.js",
@@ -40,10 +40,13 @@
 
       "app/factories/ChromeShark.PlayerInfoFactory.factory.js",
       "app/factories/ChromeShark.Enums.InterfaceType.factory.js",
+      "app/factories/ChromeShark.ViewStateFactory.factory.js",
+      "app/factories/ChromeShark.AlbumArtFactory.factory.js",
 
       "app/services/LastFmService.service.js",
 
       "app/controllers/ChromeShark.MainController.controller.js",
+      "app/controllers/ChromeShark.PlayerController.controller.js",
       "app/controllers/ChromeShark.HelpController.controller.js"
     ]
   }]
