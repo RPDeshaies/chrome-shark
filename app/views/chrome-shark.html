@@ -1,40 +1,42 @@
 <div class="chrome-shark" ng-controller="ChromeShark.MainController">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <div class="chrome-shark-album-art-container" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[albumArtPosition]">
-        <img class="chrome-shark-album-art" ng-src="{{albumArt.src}}" fade-in>
-    </div>
-    <div class="chrome-shark-content-container" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[contentPosition]">
-        <div class="chrome-shark-toolbar">
-            <div class="logo-chrome-shark">
-                <span class="logo-chrome">Chrome</span>
-                <span class="logo-shark">Shark</span>
-            </div>
-            <div class="menu-chrome-shark">
-                <a class="chrome-shark-menu-button" ng-click="PlayerButtonClicked()">
-                  Player
-                  <i class="fa fa-play-circle"></i>
-                </a>
-                <span class="separator"> | </span>
-                <a class="chrome-shark-menu-button" ng-click="HelpButtonClicked()">
-                  Help
-                  <i class="fa fa-question-circle"></i>
-                </a>
-                <span class="separator"> | </span>
-                <a class="chrome-shark-menu-button" ng-click="CloseButtonClicked()">
-                  Close
-                  <i class="fa fa-times-circle"></i>
-                </a>
-            </div>
-        </div>
+    <div class="row chrome-shark-main-row">
+      <div class="chrome-shark-album-art-container col-sm-5 hidden-xs" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[albumArtPosition]">
+          <img class="chrome-shark-album-art" ng-src="{{albumArt.src}}" />
+      </div>
+      <div class="chrome-shark-content-container col-sm-7 col-xs-12" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[contentPosition]">
+          <div class="chrome-shark-toolbar">
+              <div class="logo-chrome-shark">
+                  <span class="logo-chrome">Chrome</span>
+                  <span class="logo-shark">Shark</span>
+              </div>
+              <div class="menu-chrome-shark">
+                  <a class="chrome-shark-menu-button" ng-click="PlayerButtonClicked()">
+                    Player
+                    <i class="fa fa-play-circle"></i>
+                  </a>
+                  <span class="separator"> | </span>
+                  <a class="chrome-shark-menu-button" ng-click="HelpButtonClicked()">
+                    Help
+                    <i class="fa fa-question-circle"></i>
+                  </a>
+                  <span class="separator"> | </span>
+                  <a class="chrome-shark-menu-button" ng-click="CloseButtonClicked()">
+                    Close
+                    <i class="fa fa-times-circle"></i>
+                  </a>
+              </div>
+          </div>
 
-        <div class="chrome-shark-content">
-          <div class="chrome-shark-view-player" ng-show="viewState.current == 'player'">
-            <div ag-include="'app/views/chrome-shark-view-player.html'"></div>
+          <div class="chrome-shark-content">
+            <div class="chrome-shark-view-player" ng-show="viewState.current == 'player'">
+              <div ag-include="'app/views/chrome-shark-view-player.html'"></div>
+            </div>
+            <div class="chrome-shark-view-help" ng-show="viewState.current == 'help'">
+              <div ag-include="'app/views/chrome-shark-view-help.html'"></div>
+            </div>
           </div>
-          <div class="chrome-shark-view-help" ng-show="viewState.current == 'help'">
-            <div ag-include="'app/views/chrome-shark-view-help.html'"></div>
-          </div>
-        </div>
+      </div>
     </div>
 </div>
