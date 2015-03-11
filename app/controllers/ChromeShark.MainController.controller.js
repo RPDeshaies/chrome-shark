@@ -1,5 +1,3 @@
-//https://developer.chrome.com/extensions/tut_analytics
-
 chromeShark.controller("ChromeShark.MainController", ["$scope", "$timeout", "ChromeShark.ViewStateFactory", "ChromeShark.AlbumArtFactory", function($scope, $timeout, ViewState, AlbumArt){
     var properties = {
       //The interval to flip the UI horizontally

@@ -1,5 +1,3 @@
-//https://developer.chrome.com/extensions/tut_analytics
-
 chromeShark.controller("ChromeShark.PlayerController", ["$scope", "$timeout", "$sce", "ChromeShark.PlayerInfoFactory", "ChromeShark.Enums.InterfaceType",
   "LastFmService", "ChromeShark.ViewStateFactory", "ChromeShark.AlbumArtFactory", function($scope, $timeout, $sce, PlayerInfoFactory, InterfaceType, LastFmService, ViewState, AlbumArt) {
 
