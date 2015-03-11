@@ -22,5 +22,15 @@ chromeShark.controller("ChromeShark.HelpController", ["$scope", "ChromeShark.Vie
       href : "https://chrome.google.com/webstore/detail/chrome-shark/fifmpfkhpojgoodihbmflkgpifanigbd",
       iconClass : "fa-google",
     },
+    {
+      title : "Report an issue",
+      href : "https://github.com/Tareck117/chrome-shark/issues",
+      iconClass : "fa-exclamation-circle",
+    },
+    {
+      title : "Rate the application",
+      href : "https://chrome.google.com/webstore/detail/chrome-shark/fifmpfkhpojgoodihbmflkgpifanigbd/reviews",
+      iconClass : "fa-star",
+    },
   ];
 }]);
