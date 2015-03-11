@@ -1,10 +1,10 @@
 <div class="chrome-shark" ng-controller="ChromeShark.MainController">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <div class="chrome-shark-album-art-container">
+    <div class="chrome-shark-album-art-container" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[albumArtPosition]">
         <img class="chrome-shark-album-art" ng-src="{{albumArt.src}}" fade-in>
     </div>
-    <div class="chrome-shark-meta-data">
+    <div class="chrome-shark-content-container" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[contentPosition]">
         <div class="chrome-shark-toolbar">
             <div class="logo-chrome-shark">
                 <span class="logo-chrome">Chrome</span>

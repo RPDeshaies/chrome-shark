@@ -4,7 +4,7 @@
     <span>No songs are currently playing.
       <br>Close Chrome Shark and add some ! </span>
   </div>
-  <div class="chrome-shark-meta-data-wrapper">
+  <div class="chrome-shark-meta-data-wrapper" ng-show="!trackName && viewState.current == 'player'">
     <div class="chrome-shark-track-info">
       <div>
         <span class="chrome-shark-title">{{trackName}}</span>

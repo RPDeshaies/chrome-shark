@@ -8,10 +8,6 @@ chromeShark.controller("ChromeShark.PlayerController", ["$scope", "$timeout", "$
     var properties = {
       //The interval to refresh the meta data
       updateTimeMetaData: 200, //200ms
-      //The interval between refresh of the player controls
-      updateTimePlayerControls: 3000, //3 sec
-      //The interval to flip the UI horizontally
-      flipTime: 1000 * 60 * 5, //5 min
     };
 
     //The album art to load if Last.fm don't find one
