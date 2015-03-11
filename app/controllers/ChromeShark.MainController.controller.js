@@ -3,8 +3,7 @@
 chromeShark.controller("ChromeShark.MainController", ["$scope", "$timeout", "ChromeShark.ViewStateFactory", "ChromeShark.AlbumArtFactory", function($scope, $timeout, ViewState, AlbumArt){
     var properties = {
       //The interval to flip the UI horizontally
-      // flipTime: 1000 * 60 * 5, //5 min
-      flipTime : 1000,
+      flipTime: 1000 * 60 * 5, //5 min
     };
 
     $scope.viewState = ViewState;
