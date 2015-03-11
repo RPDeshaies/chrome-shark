@@ -43,7 +43,8 @@
 
       "app/services/LastFmService.service.js",
 
-      "app/controllers/ChromeShark.MainController.controller.js"
+      "app/controllers/ChromeShark.MainController.controller.js",
+      "app/controllers/ChromeShark.HelpController.controller.js"
     ]
   }]
 }

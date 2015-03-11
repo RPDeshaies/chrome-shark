@@ -1,5 +1,19 @@
 var chromeShark = angular.module("chromeShark", []);
 
+chromeShark.directive('agInclude', function($sce){
+    return {
+        restrict : 'AE',
+        replace : true,
+        template : "<div ng-include='parsedUrl'></div>",
+        scope : {
+            agInclude : "@"
+        },
+        link : function(scope, element, attrs) {
+            scope.parsedUrl = $sce.trustAsResourceUrl(chrome.extension.getURL(scope.$eval(attrs.agInclude)));
+        }
+    }
+});
+
 /**
  * AngularHelper : Contains methods that help using angular without being in the scope of an angular controller or directive
  */
@@ -27,7 +41,7 @@ var AngularHelper = (function () {
             $compile($targetDom)($scope || $rootScope);
             $rootScope.$digest();
         }]);
-    }
+   }
 
     return AngularHelper;
 })();
@@ -49,9 +63,9 @@ var Main = (function(){
 					//Append the template
 					$("body").append("<div id='chrome-shark-scope'>");
 					var $targetDom = $("#chrome-shark-scope");
+          $targetDom.append(view)
 
-					//Compile it to bind it with angular
-					AngularHelper.Compile($targetDom, view)
+          angular.bootstrap(document, ["chromeShark"]);
 				}
 			});
 		}

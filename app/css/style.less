@@ -19,6 +19,75 @@
   left: 0;
   top: 0;
   z-index: 99999999999;
+
+  //Global
+  .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: inherit
+  }
+  .h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, .h4 .small, .h4 small, .h5 .small, .h5 small, .h6 .small, .h6 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small, h4 .small, h4 small, h5 .small, h5 small, h6 .small, h6 small {
+    font-weight: 400;
+    line-height: 1;
+    color: #777
+  }
+  .h1, .h2, .h3, h1, h2, h3 {
+    margin-top: 20px;
+    margin-bottom: 10px
+  }
+  .h1 .small, .h1 small, .h2 .small, .h2 small, .h3 .small, .h3 small, h1 .small, h1 small, h2 .small, h2 small, h3 .small, h3 small {
+    font-size: 65%
+  }
+  .h4, .h5, .h6, h4, h5, h6 {
+    margin-top: 10px;
+    margin-bottom: 10px
+  }
+  .h4 .small, .h4 small, .h5 .small, .h5 small, .h6 .small, .h6 small, h4 .small, h4 small, h5 .small, h5 small, h6 .small, h6 small {
+    font-size: 75%
+  }
+  .h1, h1 {
+    font-size: 36px;
+  }
+  .h2, h2 {
+    font-size: 30px;
+  }
+  .h3, h3 {
+    font-size: 24px;
+  }
+  .h4, h4 {
+    font-size: 18px;
+  }
+  .h5, h5 {
+    font-size: 14px;
+  }
+  .h6, h6 {
+    font-size: 12px;
+  }
+  p {
+    color: #222;
+    display: block;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    height: 19px;
+    line-height: 19.5px;
+    margin-bottom: 15px;
+  }
+  a {
+    color: #222;
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    height: 19px;
+    line-height: 19.5px;
+  }
+  a:hover{
+    color:@teal;
+    text-decoration: none;
+  }
+  hr{
+    margin: 18px 0;
+  }
+
   //Album Art
   .chrome-shark-album-art-container {
     display: block;
@@ -90,7 +159,7 @@
       }
     }
     //Meta data content
-    .chrome-shark-meta-data-container {
+    .chrome-shark-content {
       padding: 20px;
       margin: 80px 50px 20px;
       display: block;
@@ -112,6 +181,12 @@
 				line-height: 20pt !important;
 				font-weight: bold !important;
 			}
+
+      .chrome-shark-help-quick-links-list{
+        li{
+          list-style:none;
+        }
+      }
     }
     .chrome-shark-track-info {
       color: @dark-gray;

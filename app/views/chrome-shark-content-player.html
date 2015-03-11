@@ -1,0 +1,38 @@
+<div class="chrome-shark-nothing-playing">
+  <span>No songs are currently playing.
+    <br>Close Chrome Shark and add some ! </span>
+</div>
+<div class="chrome-shark-meta-data-wrapper">
+  <div class="chrome-shark-track-info">
+    <div>
+      <span class="chrome-shark-title">{{trackName}}</span>
+      <div class="chrome-shark-artist-container">
+        <span class="chrome-shark-artist-prefix"> by </span>
+        <span class="chrome-shark-artist">{{trackArtist}}</span>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-shark-track-controls">
+    <div class="chrome-shark-time-elapsed-total">
+      <span class="chrome-shark-time-elapsed">{{timeStart}}</span>
+      <span class="separator"> / </span>
+      <span class="chrome-shark-time-total">{{timeEnd}}</span>
+    </div>
+    <div class="chrome-shark-player-controls">
+      <i class="fa fa-step-backward fa-lg fa-2x" ng-click="PreviousButtonClicked()"></i>
+      <i class="fa fa-play fa-lg fa-2x" ng-click="PlayPauseButtonClicked()"></i>
+      <i class="fa fa-step-forward fa-lg fa-2x" ng-click="NextButtonClicked()"></i>
+    </div>
+    <div class="chrome-shark-progress-bar-container">
+      <div class="chrome-shark-progress-bar">
+        <div class="chrome-shark-progress-bar-current-progress" ng-style="{width : percentageElapsed + '%'}">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="chrome-shark-artist-bio" ng-show="artistSummary && state == 'help'">
+    <span class="chrome-shark-artist-summary-title">Artist summary</span>
+    <p class="chrome-shark-artist-bio-summary" ng-bind-html="artistSummary">
+    </p>
+  </div>
+</div>

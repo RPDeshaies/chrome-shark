@@ -1,6 +1,6 @@
 //https://developer.chrome.com/extensions/tut_analytics
 
-chromeShark.controller("ChromeShark.MainController", ["$scope", "$timeout",  "$sce", "ChromeShark.PlayerInfoFactory", "ChromeShark.Enums.InterfaceType",
+chromeShark.controller("ChromeShark.MainController", ["$scope", "$timeout", "$sce", "ChromeShark.PlayerInfoFactory", "ChromeShark.Enums.InterfaceType",
   "LastFmService",
   function($scope, $timeout, $sce, PlayerInfoFactory, InterfaceType, LastFmService) {
 
@@ -27,8 +27,17 @@ chromeShark.controller("ChromeShark.MainController", ["$scope", "$timeout",  "$s
     $scope.artistSummary = "";
     $scope.albumArtUrl = defaultAlbumArtUrl;
     $scope.percentageElapsed = 32;
+    $scope.state = "player";
 
     //Public
+    $scope.PlayerButtonClicked = function() {
+      $scope.state = "player";
+    }
+
+    $scope.HelpButtonClicked = function() {
+      $scope.state = "help";
+    }
+
     $scope.CloseButtonClicked = function() {
       $scope.$scopeDom.hide();
     }
@@ -85,8 +94,7 @@ chromeShark.controller("ChromeShark.MainController", ["$scope", "$timeout",  "$s
             LastFmService.GetArtistInfo($scope.trackName, $scope.trackArtist).then(function(artist) {
               if (artist && artist.bio && artist.bio.summary) {
                 $scope.artistSummary = $sce.trustAsHtml(artist.bio.summary)
-              }
-              else{
+              } else {
                 $scope.artistSummary = "";
               }
 
