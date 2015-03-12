@@ -7,6 +7,7 @@
 }
 //Style
 .chrome-shark {
+  @import (less) "font-awesome-4.3.0/less/font-awesome.less";
   display: block;
   position: fixed;
   width: 100%;
@@ -15,6 +16,18 @@
   top: 0;
   z-index: 99999999999;
   @import (less) "bootstrap-3.3.2/bootstrap.min.css";
+  //Bootstrap add
+  .col-centered{
+      float: none;
+      margin: 0 auto;
+  }
+
+  //Fix
+  .list-group-item{
+    cursor:pointer;
+  }
+
+  //Global
   .chrome-shark-main-row{
     height:100%;
   }
@@ -47,10 +60,7 @@
       text-align: left;
     }
     .logo-chrome-shark {
-      padding-top: 10px;
-      float: left;
       //Override
-      display: inline !important;
       font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
       font-size: 26.6666660308838px !important;
       font-style: normal !important;
@@ -67,8 +77,6 @@
       }
     }
     .menu-chrome-shark {
-      padding-top: 10px;
-      float: right;
       //Override
       color: @white !important;
       display: block !important;
