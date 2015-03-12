@@ -3,10 +3,10 @@
     <span>No songs are currently playing.
       <br>Close Chrome Shark and add some ! </span>
   </div>
-  <div class="row">
+  <div class="row" ng-show="trackName && viewState.current == 'player'">
     <div class="col-xs-12">
-      <img class="col-centered img-responsive visible-xs" ng-src="{{albumArt.src}}" />
-      <br class="visible-xs">
+      <img class="col-centered img-responsive hidden-md hidden-lg" ng-src="{{albumArt.src}}" />
+      <br class="hidden-md hidden-lg">
     </div>
   </div>
   <div class="chrome-shark-meta-data-wrapper" ng-show="trackName && viewState.current == 'player'">

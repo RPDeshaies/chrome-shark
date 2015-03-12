@@ -2,10 +2,10 @@
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
     <div class="row chrome-shark-main-row">
-      <div class="chrome-shark-album-art-container col-sm-6 hidden-xs" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[albumArtPosition]">
+      <div class="chrome-shark-album-art-container col-md-6 hidden-sm hidden-xs" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[albumArtPosition]">
           <img class="chrome-shark-album-art" ng-src="{{albumArt.src}}" />
       </div>
-      <div class="chrome-shark-content-container col-sm-6 col-xs-12" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[contentPosition]">
+      <div class="chrome-shark-content-container col-xs-12 col-sm-12 col-md-6" ng-class="{'left' : 'pull-left', 'right' : 'pull-right'}[contentPosition]">
           <div class="chrome-shark-toolbar row">
               <div class="logo-chrome-shark col-sm-4 hidden-xs">
                   <span class="logo-chrome">Chrome</span>
@@ -15,7 +15,7 @@
                     <span class="logo-chrome">Chrome</span>
                     <span class="logo-shark">Shark</span>
                 </div>
-              <div class="menu-chrome-shark col-sm-4 pull-right hidden-xs">
+              <div class="menu-chrome-shark pull-right hidden-xs">
                   <a class="chrome-shark-menu-button" ng-click="PlayerButtonClicked()">
                     Player
                     <i class="fa fa-play-circle"></i>
