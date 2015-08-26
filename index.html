@@ -1,516 +1,454 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="author" content="René-Pier Deshaies-Gélinas">
-  <meta property="og:title" content="The best tool to stream music on your TV">
-  <meta property="og:description" content="Chrome Shark is a Chrome extension that transforms web music players into a great full screen music player to fit on your television.">
-  <meta property="og:url" content="http://tareck117.github.io/chrome-shark/">
-  <meta property="og:image" content="http://tareck117.github.io/chrome-shark/img/chrome-shark/1280x800.jpg">
-  <meta property="og:type" content="website">
-  <meta name="description" content="Chrome Shark is a Chrome extension that transforms web music players into a great full screen music player to fit on your television.">
-
-  <title>Chrome Shark - The best tool to stream your music on your TV</title>
-  <link rel="icon" type="image/png" href="img/favicons/favicon-v1.1.png" />
-
-  <!-- Bootstrap Core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link href="css/agency.css" rel="stylesheet">
-
-  <!-- Custom Fonts -->
-  <link href="css/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
-  <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
-
-  <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
-  <!--  Chrome store -->
-  <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/chrome-shark">
-  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-  <!--[if lt IE 9]>
-        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="René-Pier Deshaies-Gélinas">
+    <meta property="og:title" content="The best tool to stream music on your TV">
+    <meta property="og:description" content="Chrome Shark is a Chrome extension that transforms web music players into a great full screen music player to fit on your television.">
+    <meta property="og:url" content="http://tareck117.github.io/chrome-shark/">
+    <meta property="og:image" content="http://tareck117.github.io/chrome-shark/img/chrome-shark/1280x800.jpg">
+    <meta property="og:type" content="website">
+    <meta name="description" content="Chrome Shark is a Chrome extension that transforms web music players into a great full screen music player to fit on your television.">
+    <title>Chrome Shark - The best tool to stream your music on your TV</title>
+    <link rel="icon" type="image/png" href="img/favicons/favicon-v1.1.png"
+    />
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="css/font-awesome-4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+    <!-- Chrome store -->
+    <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/chrome-shark">
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-  <script>
-    (function(i, s, o, g, r, a, m) {
-      i['GoogleAnalyticsObject'] = r;
-      i[r] = i[r] || function() {
-        (i[r].q = i[r].q || []).push(arguments)
-      }, i[r].l = 1 * new Date();
-      a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-      a.async = 1;
-      a.src = g;
-      m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-55650509-1', 'auto');
-    ga('require', 'displayfeatures');
-    ga('require', 'linkid', 'linkid.js');
-    ga('send', 'pageview');
-  </script>
-</head>
-
-<body id="page-top" class="index">
-
-  <!-- Navigation -->
-  <nav class="navbar navbar-default navbar-fixed-top navbar navbar-shrink">
-    <div class="container">
-      <!-- Brand and toggle get grouped for better mobile display -->
-      <div class="navbar-header page-scroll">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <a class="navbar-brand page-scroll chrome-shark-logo" href="#page-top">
+    <script>
+      (function(i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function() {
+          (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+          m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+      })(window, document, 'script', 'http://www.google-analytics.com/analytics.js', 'ga');
+  
+      ga('create', 'UA-55650509-1', 'auto');
+      ga('require', 'displayfeatures');
+      ga('require', 'linkid', 'linkid.js');
+      ga('send', 'pageview');
+    </script>
+  </head>
+  
+  <body id="page-top" class="index">
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-fixed-top navbar navbar-shrink">
+      <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand page-scroll chrome-shark-logo" href="#page-top">
           <span class="logo-chrome">Chrome</span>
           <span class="logo-shark-alter">Shark</span>
         </a>
-      </div>
-
-      <!-- Collect the nav links, forms, and other content for toggling -->
-      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-        <ul class="nav navbar-nav navbar-right">
-          <li class="hidden">
-            <a href="#page-top"></a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#chrome-extension">Chrome Extension</a>
-          </li>
-          <li>
-            <a class="page-scroll" href="#features">Features</a>
-          </li>
-          <li class="">
-            <a class="page-scroll" href="#about-me">About me</a>
-          </li>
-        </ul>
-      </div>
-      <!-- /.navbar-collapse -->
-    </div>
-    <!-- /.container-fluid -->
-  </nav>
-
-  <!-- Header -->
-  <header>
-    <div class="container">
-      <div class="intro-text">
-        <!-- <div class="intr#-lead-in">Welcome To Our Studio!</div> -->
-        <div class="intro-heading">The best tool to stream music on your TV</div>
-        <a href="#what-is-this" class="page-scroll btn btn-xl">Tell Me More</a>
-        <div class="chrome-cast-functionnalities">
-          <div class="row">
-            <div class="col-md-2 col-md-offset-3">
-
-              <span class="fa-stack fa-4x feature-icon">
-
-                <i class="fa fa-circle fa-stack-2x text-white"></i>
-
-                <i class="fa fa-headphones fa-stack-1x text-primary"></i>
-
-              </span>
-
-            </div>
-            <div class="col-md-2 visible-md-block visible-lg-block">
-
-              <span class="fa-stack fa-4x feature-icon">
-
-                <i class="fa fa-circle fa-stack-2x text-white"></i>
-
-                <i class="fa fa-arrow-right fa-stack-1x text-primary"></i>
-
-              </span>
-
-            </div>
-            <div class="col-md-2 hidden-md hidden-lg">
-              <span class="fa-stack fa-4x feature-icon">
-
-                <i class="fa fa-circle fa-stack-2x text-white"></i>
-
-                <i class="fa fa-arrow-down fa-stack-1x text-primary"></i>
-
-              </span>
-            </div>
-            <div class="col-md-2">
-
-              <span class="fa-stack fa-4x feature-icon">
-
-                <i class="fa fa-circle fa-stack-2x text-white"></i>
-
-
-                <img class="chrome-logo fa-stack-1x img-responsive text-primary" width="40px" src="img/icons/cast.png" alt="Chromecast">
-
-              </span>
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- What is this Section -->
-  <section id="what-is-this">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">What is this ?</h2>
-          <h3 class="section-subheading text-muted">
-            <span class="logo-box">
-              <span class="logo-chrome">Chrome</span>
-              <span class="logo-shark">Shark</span>
-            </span>
-            is a JavaScript application that transforms <a href="http://grooveshark.com" target="_blank">Grooveshark</a> or <a href="http://play.spotify.com" target="_blank">Spotify</a> into a great full screen music player to fit on your television.
-          </h3>
-        </div>
-      </div>
-      <hr>
-      <div class="row">
-        <div class="col-sm-12 text-center ">
-          <h3 class="section-heading text-center">
-            What is new ?
-          </h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4 col-sm-offset-4 text-center">
-          <div class="list-group">
-            <div class="list-group-item list-group-item-info">
-              A brand new Chrome extension
-              <i class="fa fa-exclamation"></i>
-            </div>
-            <div class="list-group-item list-group-item-info">
-              Player controls for Spotify
-              <i class="fa fa-play"></i>
-            </div>
-            <div class="list-group-item list-group-item-info">
-              Spotify Support
-              <i class="fa fa-exclamation"></i>
-            </div>
-          </div>
-
-          <p class="text-muted text-center">
-            Help me to continue the developpement with a little donation
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
-  ">
-              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
-
-            <p class="text-muted text-center">
-              You want to know more about me ? <a class="page-scroll" href="#about-me">click here</a>
-            </p>
-
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Extension Section -->
-  <section id="chrome-extension" class="bg-light-gray">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Chrome Extension</h2>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 text-muted text-center">
-          <p>
-            Simply install the chrome extension by clicking on the following button
-          </p>
-        </div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4 text-center">
-          <a href="https://chrome.google.com/webstore/detail/chrome-shark/fifmpfkhpojgoodihbmflkgpifanigbd" target="_blank" class="btn btn-default chrome-shark-button chrome-shark-button-lg">
-            <img src="img/icons/chrome-shark-icon-transparent.png" width="48px" alt="Chrome shark chrome extension icon">
-            <br> Add to my Google Chrome extensions
-          </a>
-        </div>
-      </div>
-      <br>
-      <hr>
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3 text-muted text-center">
-          <p>
-            Go to <a href="http://grooveshark.com" target="_blank">Grooveshark</a> or
-            <a href="http://play.spotify.com" target="_blank">Spotify</a> after the installation.
-          </p>
-          <p>
-            You should be able to see the Chrome Shark icon in the top right of the url bar.
-          </p>
-          <p>
-            Click on it, and voilà !
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features Section -->
-  <section id="features">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">Features</h2>
-          <h3 class="section-subheading text-muted">
-            Why should I use
-            <span class="logo-box">
-              <span class="logo-chrome">Chrome</span>
-              <span class="logo-shark">Shark</span>
-            </span>
-            ?
-            <p class="answer">
-              Because it is the perfect solution if your are using <a href="http://grooveshark.com" target="_blank">Grooveshark</a> or <a href="http://play.spotify.com" target="_blank">Spotify</a> on a <a href="https://www.google.ca/chrome/devices/chromecast/"
-              target="_blank">Google Chromecast</a> or your television.
-            </p>
-          </h3>
-        </div>
-      </div>
-      <div class="row text-center">
-        <div class="col-md-4">
-          <div class="feature-header">
-            <span class="fa-stack fa-4x feature-icon">
-
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-
-              <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
-
-            </span>
-            <h4 class="service-heading">Automatic Synchronization</h4>
-          </div>
-          <p class="text-muted">
-            <b>Synchronizes in real time</b> the track information (e.g. album, album art, artist summary, etc.) on your television.
-          </p>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-header">
-            <span class="fa-stack fa-4x feature-icon">
-
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-
-              <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
-
-            </span>
-            <h4 class="service-heading">Designed for the big screen</h4>
-          </div>
-          <p class="text-muted">
-            <span class="logo-box">
-              <span class="logo-chrome">Chrome</span>
-              <span class="logo-shark">Shark</span>
-            </span>
-            was designed for your living room so that everyone in the house could enjoy your music
-          </p>
-        </div>
-        <div class="col-md-4">
-          <div class="feature-header">
-            <span class="fa-stack fa-4x feature-icon">
-
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-
-              <i class="fa fa-beer fa-stack-1x fa-inverse"></i>
-
-            </span>
-            <h4 class="service-heading">Easy to use</h4>
-          </div>
-          <p class="text-muted">
-            Simply go to <a href="http://grooveshark.com" target="_blank">Grooveshark</a> or <a href="http://play.spotify.com" target="_blank">Spotify</a> , select your songs, start
-            <span class="logo-box">
-              <span class="logo-chrome">Chrome</span>
-              <span class="logo-shark">Shark</span>
-            </span>
-            and click on the Play button. The app will take care of the rest!
-          </p>
-          <p class="text-muted">
-            It is simply perfect for enjoying a beer with your friends in the living room!
-          </p>
-        </div>
-      </div>
-      <hr>
-      <div class="row text-center">
-        <div class="col-md-8 col-md-offset-2">
-          <div class="feature-header">
-            <span class="fa-stack fa-4x feature-icon">
-
-              <i class="fa fa-circle fa-stack-2x text-primary"></i>
-
-              <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-
-            </span>
-            <h4 class="service-heading">Open source</h4>
-          </div>
-          <p class="text-muted">
-            <span class="logo-box">
-              <span class="logo-chrome">Chrome</span>
-              <span class="logo-shark">Shark</span>
-            </span>
-            is completly open source.
-          </p>
-          <p class='text-muted'>Anybody who wants to help can contribute to the project</p>
-          <p class="text-muted">
-            You can find all the source code at <a href="https://github.com/Tareck117/chrome-shark/" target="_blank">Github <i class="fa fa-github-alt"></i></a>
-          </p>
-        </div>
-      </div>
-      <hr>
-      <div class="row features-text">
-        <div class="col-md-7">
-          <h3>A Clean interface</h3>
-          <p>
-            The interface is <b>optimized for a full screen experience</b> in order to provide all the information that you need.
-          </p>
-          <p>
-            The interface will also automatically flip itself after a cetain amount of time so that your TV pixels will not get burned.
-          </p>
-        </div>
-        <div class="col-md-5">
-          <img src="img/chrome-shark/1280x800.jpg" alt="Chrome Shark - Interface" class="img-responsive">
-        </div>
-      </div>
-      <hr>
-      <div class="row features-text">
-        <div class="col-md-5">
-          <img src="img/chrome-shark/controls.png" alt="Chrome Shark - Controls" class="img-responsive">
-        </div>
-        <div class="col-md-7">
-          <h3>The controls you need</h3>
-          <p>
-            From the interface, you can <b>Play</b> / <b>Pause</b> a track or simply <b>skip it</b> !
-          </p>
-          <p>
-            You skipped one to many songs ? Do not panick ! Just click on the <b>Previous</b> button and you are safe&nbsp;!
-          </p>
-          <small>
-            * Only works with Grooveshark
-          </small>
-        </div>
-      </div>
-      <hr>
-      <div class="row features-text">
-        <div class="col-md-7">
-          <h3>The information</h3>
-          <p>
-            In addition to the track information,
-            <span class="logo-box">
-              <span class="logo-chrome">Chrome</span>
-              <span class="logo-shark">Shark</span>
-            </span> will also get the album art and the artist summary using the fantastic Last.fm API <i class="fa fa-lastfm-square fa-lg"></i>.
-          </p>
-        </div>
-        <div class="col-md-5">
-          <img src="img/chrome-shark/album-art.jpg" alt="Chrome Shark - Album Art" class="img-responsive">
-          <img src="img/chrome-shark/artist-summary.png" alt="Chrome Shark - Artist Summary" class="img-responsive">
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- About/Team Section -->
-  <section id="about-me" class="bg-light-gray">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">About me</h2>
-          <h3 class="section-subheading text-muted">I'm just an humble programmer who loves music and video games!</h3>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2 col-md-offset-5">
-          <img src="img/team/rp.jpg" class="img-responsive img-circle center-block" alt="">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4 text-center">
-          <h4>René-Pier Deshaies-Gélinas</h4>
-          <p class="text-muted">
-            Programmer, musician and&nbsp;video&nbsp;game&nbsp;lover.
-          </p>
-          <hr>
-          <p>
-            If you are interested in what I do or just love programming, music or video games, follow me on
-            <a href="https://twitter.com/RPDeshaies" target="_blank">Twitter</a>
-            <a href="https://twitter.com/RPDeshaies" target="_blank">
-              <i class="fa fa-twitter fa-lg blue-twitter"></i>
-            </a>
-            because I like these things too !
-          </p>
-          <br>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-2 col-md-offset-5 text-center">
-          <ul class="list-inline social-buttons">
-            <li>
-              <a href="https://twitter.com/RPDeshaies" target="_blank">
-                <i class="fa fa-twitter"></i>
-              </a>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="hidden">
+              <a href="#page-top"></a>
             </li>
             <li>
-              <a href="http://ca.linkedin.com/pub/rené-pier-deshaies-gélinas/89/721/11/" target="_blank">
-                <i class="fa fa-linkedin"></i>
-              </a>
+              <a class="page-scroll" href="#chrome-extension">Chrome Extension</a>
+            </li>
+            <li>
+              <a class="page-scroll" href="#features">Features</a>
+            </li>
+            <li class="">
+              <a class="page-scroll" href="#about-me">About me</a>
             </li>
           </ul>
         </div>
+        <!-- /.navbar-collapse -->
       </div>
-      <div class="row">
-        <div class="col-md-4 col-md-offset-4 text-center">
-          <hr>
-          <p>
-            You can buy me a nice cup of tea <i class="fa fa-coffee fa-lg"></i> with this little donation button.
-          </p>
-          <p>
-            <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-              <input type="hidden" name="cmd" value="_s-xclick">
-              <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+      <!-- /.container-fluid -->
+    </nav>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="intro-text">
+          <!-- <div class="intr#-lead-in">Welcome To Our Studio!</div> -->
+          <div class="intro-heading">The best tool to stream music on your TV</div>
+          <a href="#what-is-this" class="page-scroll btn btn-xl">Tell Me More</a>
+          <div class="chrome-cast-functionnalities">
+            <div class="row">
+              <div class="col-md-2 col-md-offset-3">
+                <span class="fa-stack fa-4x feature-icon">
+                  <i class="fa fa-circle fa-stack-2x text-white"></i>
+                  <i class="fa fa-headphones fa-stack-1x text-primary"></i>
+                </span>
+              </div>
+              <div class="col-md-2 visible-md-block visible-lg-block">
+                <span class="fa-stack fa-4x feature-icon">
+                  <i class="fa fa-circle fa-stack-2x text-white"></i>
+                  <i class="fa fa-arrow-right fa-stack-1x text-primary"></i>
+                </span>
+              </div>
+              <div class="col-md-2 hidden-md hidden-lg">
+                <span class="fa-stack fa-4x feature-icon">
+                  <i class="fa fa-circle fa-stack-2x text-white"></i>
+                  <i class="fa fa-arrow-down fa-stack-1x text-primary"></i>
+                </span>
+              </div>
+              <div class="col-md-2">
+                <span class="fa-stack fa-4x feature-icon">
+                  <i class="fa fa-circle fa-stack-2x text-white"></i>
+                  <img class="chrome-logo fa-stack-1x img-responsive text-primary" width="40px" src="img/icons/cast.png" alt="Chromecast">
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- What is this Section -->
+    <section id="what-is-this">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">What is this ?</h2>
+            <h3 class="section-subheading text-muted">
+              <span class="logo-box">
+                <span class="logo-chrome">Chrome</span>
+                <span class="logo-shark">Shark</span>
+              </span>is a chrome extension that transforms web music players into a great full screen music player to fit on your television.</h3>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-sm-12 text-center ">
+            <h3 class="section-heading text-center">Supported web music players</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-4 text-center">
+            <div class="list-group">
+              <div class="list-group-item list-group-item-info">
+                <a href="http://play.spotify.com" target="_blank">
+                Spotify</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-12 text-center ">
+            <h3 class="section-heading text-center">What is new ?</h3>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-4 col-sm-offset-4 text-center">
+            <div class="list-group">
+              <div class="list-group-item list-group-item-info">Grooveshark died (R.I.P.)</div>
+              <div class="list-group-item list-group-item-info">A brand new Chrome extension</div>
+              <div class="list-group-item list-group-item-info">Player controls for Spotify</div>
+              <div class="list-group-item list-group-item-info">Spotify Support</div>
+              <div class="list-group-item list-group-item-info">Grooveshark Support</div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3 text-center">
+            <p class="text-muted text-center">Help me to continue the developpement with a little donation
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post"
+              target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
+  ">
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+              </form>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Extension Section -->
+    <section id="chrome-extension" class="bg-light-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Chrome Extension</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-muted text-center">
+            <p>Simply install the chrome extension by clicking on the following button</p>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-6 col-sm-offset-3 text-center">
+            <a href="https://chrome.google.com/webstore/detail/chrome-shark/fifmpfkhpojgoodihbmflkgpifanigbd" target="_blank" class="btn btn-default chrome-shark-button chrome-shark-button-lg">
+            <img src="img/icons/chrome-shark-icon-transparent.png" width="48px" alt="Chrome shark chrome extension icon">
+            <br> Add to my Google Chrome extensions
+          </a>
+          </div>
+        </div>
+        <br>
+        <hr>
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-muted">
+            <ol>
+              <li>Go to a supported web music player after the installation.</li>
+              <li>You should be able to see the Chrome Shark icon in the top right of the url bar.</li>
+              <li>Click on it, and voilà ! You are now up and running with Chrome Shark</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Section -->
+    <section id="features">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">Features</h2>
+            <h3 class="section-subheading text-muted">Why should I use
+              <span class="logo-box">
+                <span class="logo-chrome">Chrome</span>
+                <span class="logo-shark">Shark</span>
+              </span>?
+              <p class="answer">Because it is the perfect solution if your are listening to music online but want it on your
+                <a href="https://www.google.ca/chrome/devices/chromecast/"
+                target="_blank">Google Chromecast</a>or your television.</p>
+            </h3>
+          </div>
+        </div>
+        <div class="row text-center">
+          <div class="col-md-4">
+            <div class="feature-header">
+              <span class="fa-stack fa-4x feature-icon">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-refresh fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="service-heading">Automatic Synchronization</h4>
+            </div>
+            <p class="text-muted">
+              <b>Synchronizes in real time</b>the track information (e.g. album, album art, artist summary, etc.) on your television.</p>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-header">
+              <span class="fa-stack fa-4x feature-icon">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="service-heading">Designed for the big screen</h4>
+            </div>
+            <p class="text-muted">
+              <span class="logo-box">
+                <span class="logo-chrome">Chrome</span>
+                <span class="logo-shark">Shark</span>
+              </span>was designed for your living room so that everyone in the house could enjoy your music</p>
+          </div>
+          <div class="col-md-4">
+            <div class="feature-header">
+              <span class="fa-stack fa-4x feature-icon">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-beer fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="service-heading">Easy to use</h4>
+            </div>
+            <p class="text-muted">Simply go to a supported web music player, select your songs, start
+              <span class="logo-box">
+                <span class="logo-chrome">Chrome</span>
+                <span class="logo-shark">Shark</span>
+              </span>and click on the Play button. The app will take care of the rest!</p>
+            <p class="text-muted">It is perfect for enjoying a beer with your friends in the living room!</p>
+          </div>
+        </div>
+        <hr>
+        <div class="row text-center">
+          <div class="col-md-8 col-md-offset-2">
+            <div class="feature-header">
+              <span class="fa-stack fa-4x feature-icon">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="service-heading">Open source</h4>
+            </div>
+            <p class="text-muted">
+              <span class="logo-box">
+                <span class="logo-chrome">Chrome</span>
+                <span class="logo-shark">Shark</span>
+              </span>is completly open source.</p>
+            <p class='text-muted'>Anybody who wants to help can contribute to the project</p>
+            <p class="text-muted">You can find all the source code at
+              <a href="https://github.com/Tareck117/chrome-shark/" target="_blank">Github <i class="fa fa-github-alt"></i></a>
+            </p>
+          </div>
+        </div>
+        <hr>
+        <div class="row features-text">
+          <div class="col-md-7">
+            <h3>A Clean interface</h3>
+            <p>The interface is
+              <b>optimized for a full screen experience</b>in order to provide all the information that you need.</p>
+            <p>The interface will also automatically flip itself after a cetain amount of time so that your TV pixels will not get burned.</p>
+          </div>
+          <div class="col-md-5">
+            <img src="img/chrome-shark/1280x800.jpg" alt="Chrome Shark - Interface" class="img-responsive">
+          </div>
+        </div>
+        <hr>
+        <div class="row features-text">
+          <div class="col-md-5">
+            <img src="img/chrome-shark/controls.png" alt="Chrome Shark - Controls" class="img-responsive">
+          </div>
+          <div class="col-md-7">
+            <h3>The controls you need</h3>
+            <p>From the interface, you can
+              <b>Play</b>/
+              <b>Pause</b>a track or simply
+              <b>skip it</b>!</p>
+            <p>You skipped one to many songs ? Do not panick ! Just click on the
+              <b>Previous</b>button and you are safe&nbsp;!</p>
+            <small>* Only works with Grooveshark</small>
+          </div>
+        </div>
+        <hr>
+        <div class="row features-text">
+          <div class="col-md-7">
+            <h3>The information</h3>
+            <p>In addition to the track information,
+              <span class="logo-box">
+                <span class="logo-chrome">Chrome</span>
+                <span class="logo-shark">Shark</span>
+              </span>will also get the album art and the artist summary using the fantastic Last.fm API
+              <i class="fa fa-lastfm-square fa-lg"></i>.</p>
+          </div>
+          <div class="col-md-5">
+            <img src="img/chrome-shark/album-art.jpg" alt="Chrome Shark - Album Art" class="img-responsive">
+            <img src="img/chrome-shark/artist-summary.png" alt="Chrome Shark - Artist Summary" class="img-responsive">
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- About/Team Section -->
+    <section id="about-me" class="bg-light-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">About me</h2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-md-offset-5">
+            <img src="img/team/rp.jpg" class="img-responsive img-circle center-block" alt="">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 text-center">
+            <h4>René-Pier Deshaies-Gélinas</h4>
+            <p class="text-muted">Programmer, musician.</p>
+            <p class="text-muted">
+              <a href="https://twitter.com/RPDeshaies" target="_blank">@RPDeshaies</a>
+            </p>
+            <hr>
+            <p>If you are interested in what I do or just love programming, music or video games, follow me on
+              <a href="https://twitter.com/RPDeshaies"
+              target="_blank">Twitter</a>
+              <a href="https://twitter.com/RPDeshaies" target="_blank">
+              <i class="fa fa-twitter fa-lg blue-twitter"></i>
+            </a>because I like these things too !</p>
+            <br>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 col-md-offset-5 text-center">
+            <ul class="list-inline social-buttons">
+              <li>
+                <a href="https://twitter.com/RPDeshaies" target="_blank">
+                <i class="fa fa-twitter"></i>
+              </a>
+              </li>
+              <li>
+                <a href="http://ca.linkedin.com/pub/rené-pier-deshaies-gélinas/89/721/11/" target="_blank">
+                <i class="fa fa-linkedin"></i>
+              </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4 text-center">
+            <hr>
+            <p>You can buy me a nice cup of tea
+              <i class="fa fa-coffee fa-lg"></i>with this little donation button.</p>
+            <p>
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick">
+                <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----
 ">
-              <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-              <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-            </form>
-          </p>
-          <hr>
+                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+              </form>
+            </p>
+            <hr>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section id="faq">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2 class="section-heading">FAQ</h2>
-          <h3 class="section-subheading text-muted">(coming soon...)</h3>
+    </section>
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <h2 class="section-heading">FAQ</h2>
+          </div>
         </div>
-      </div>
-      <div class="row">
-
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <span class="copyright">Copyright &copy; René-Pier Deshaies-Gélinas</span>
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="q-a">
+              <p>
+                <b>Q : Why is it name Chrome Shark ?</b>
+              </p>
+              <p>A: Well... that is kind of funny. The inital goal of the application was to have a nice
+                <b>Groove</b>shark (R.I.P.) interface on my TV using my
+                <b>Chrome</b>Cast. Then, Grooveshark died and I started using Spotify. This is why Chrome Shark is now compatible with Spotify</p>
+            </div>
+            <hr>
+          </div>
         </div>
-        <div class="col-md-4">
-          <!-- <ul class="list-inline social-buttons">
+        <div class="row"></div>
+      </div>
+    </section>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4">
+            <span class="copyright">Copyright &copy; René-Pier Deshaies-Gélinas</span>
+          </div>
+          <div class="col-md-4">
+            <!-- <ul class="list-inline social-buttons">
             <li><a href="#"><i class="fa fa-twitter"></i></a>
             </li>
             <li><a href="#"><i class="fa fa-facebook"></i></a>
@@ -518,35 +456,30 @@
             <li><a href="#"><i class="fa fa-linkedin"></i></a>
             </li>
           </ul> -->
-        </div>
-        <div class="col-md-4">
-          <ul class="list-inline quicklinks">
-            <li>
-              <!-- <a href="#">Privacy Policy</a> -->
-            </li>
-            <li>
-              <!-- <a href="#">Terms of Use</a> -->
-            </li>
-          </ul>
+          </div>
+          <div class="col-md-4">
+            <ul class="list-inline quicklinks">
+              <li>
+                <!-- <a href="#">Privacy Policy</a> -->
+              </li>
+              <li>
+                <!-- <a href="#">Terms of Use</a> -->
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
-
-  <!-- jQuery Version 1.11.0 -->
-  <script src="js/jquery-1.11.0.js"></script>
-
-  <!-- Bootstrap Core JavaScript -->
-  <script src="js/bootstrap.min.js"></script>
-
-  <!-- Plugin JavaScript -->
-  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-  <script src="js/classie.js"></script>
-  <!--<script src="js/cbpAnimatedHeader.js"></script>-->
-
-  <!-- Custom Theme JavaScript -->
-  <script src="js/agency.js"></script>
-
-</body>
+    </footer>
+    <!-- jQuery Version 1.11.0 -->
+    <script src="js/jquery-1.11.0.js"></script>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <!--<script src="js/cbpAnimatedHeader.js"></script>-->
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+  </body>
 
 </html>

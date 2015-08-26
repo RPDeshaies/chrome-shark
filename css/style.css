@@ -199,6 +199,13 @@ fieldset[disabled] .btn-xl.active {
   color: white;
   background-color: #404040;
 }
+.highlight {
+  padding: 9px 14px;
+  margin-bottom: 14px;
+  background-color: #ebebeb;
+  border: 1px solid #e1e1e8;
+  border-radius: 4px;
+}
 /**
  * Custom Navigation Bar
  */
