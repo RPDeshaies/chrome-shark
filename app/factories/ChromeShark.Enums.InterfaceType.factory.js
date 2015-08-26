@@ -3,14 +3,14 @@ chromeShark.factory("ChromeShark.Enums.InterfaceType", [function() {
   var InterfaceType = function() {};
 
   InterfaceType.enum = {
-    Grooveshark: 0,
-    Spotify: 1,
+    Spotify: 0,
+    Soundcloud: 1,
   };
 
   InterfaceType.GetInterfaceType = function() {
-    var interface = InterfaceType.enum.Grooveshark
-    if (location.host.indexOf("grooveshark") == -1) {
-      interface = InterfaceType.enum.Spotify;
+    var interface = InterfaceType.enum.Spotify
+    if (location.host.indexOf("spotify") == -1) {
+      interface = InterfaceType.enum.Soundcloud;
     }
 
     return interface;

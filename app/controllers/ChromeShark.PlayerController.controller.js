@@ -10,7 +10,7 @@ chromeShark.controller("ChromeShark.PlayerController", ["$scope", "$timeout", "$
 
     //The album art to load if Last.fm don't find one
     // var defaultAlbumArtUrl = "http://cdn.last.fm/flatness/responsive/2/noimage/default_album_300_g4.png";
-    var defaultAlbumArtUrl = "http://lorempixel.com/500/500/abstract/";
+    var defaultAlbumArtUrl = "http://lorempixel.com/500/500/";
     var chromeSharkInterface = InterfaceType.GetInterfaceType();
     var playerInfo = PlayerInfoFactory.GetPlayerInfo(chromeSharkInterface);
 
@@ -42,10 +42,10 @@ chromeShark.controller("ChromeShark.PlayerController", ["$scope", "$timeout", "$
     var RefreshMetaData = function() {
       if (playerInfo) {
         //Get the new value from the DOM
-        var newTrackName = playerInfo.GetSong().text();
-        var newTrackArtist = playerInfo.GetArtist().text();
-        var newTimeStart = playerInfo.GetTimeElapsed().text().trim() || "0:00";
-        var newTimeEnd = playerInfo.GetTimeTotal().text().trim() || "0:00";
+        var newTrackName = playerInfo.GetSong();
+        var newTrackArtist = playerInfo.GetArtist();
+        var newTimeStart = playerInfo.GetTimeElapsed();
+        var newTimeEnd = playerInfo.GetTimeTotal();
 
         //Parse the new start and end time and calculate the completed percentage
         var timeRegex = new RegExp("[0-9]+", "g");
@@ -81,7 +81,7 @@ chromeShark.controller("ChromeShark.PlayerController", ["$scope", "$timeout", "$
               } else {
                 $scope.artistSummary = "";
               }
-
+              
               //If no image were found using the track info
               if (!$scope.albumArt.src || $scope.albumArt.src == defaultAlbumArtUrl) {
                 //If there is an image for that artist

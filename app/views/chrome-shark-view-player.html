@@ -1,5 +1,5 @@
 <div class="chrome-shark-content-player" ng-controller="ChromeShark.PlayerController">
-  <div class="chrome-shark-nothing-playing" ng-show="!trackName && viewState.current == 'player'">
+  <div class="chrome-shark-nothing-playing" ng-show="(!trackName || !trackArtist) && viewState.current == 'player'">
     <span>No songs are currently playing.
       <br>Close Chrome Shark and add some ! </span>
   </div>
@@ -9,12 +9,12 @@
       <br class="hidden-md hidden-lg">
     </div>
   </div>
-  <div class="chrome-shark-meta-data-wrapper" ng-show="trackName && viewState.current == 'player'">
+  <div class="chrome-shark-meta-data-wrapper" ng-show="trackName && trackArtist && viewState.current == 'player'">
     <div class="chrome-shark-track-info">
       <div>
         <span class="chrome-shark-title">{{trackName}}</span>
         <div class="chrome-shark-artist-container">
-          <span class="chrome-shark-artist-prefix"> by </span>
+          <span class="chrome-shark-artist-prefix" ng-show="trackArtist"> by </span>
           <span class="chrome-shark-artist">{{trackArtist}}</span>
         </div>
       </div>

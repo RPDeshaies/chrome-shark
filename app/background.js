@@ -1,5 +1,5 @@
 var Background = (function(){
-  var supportedSites = ["grooveshark", "spotify"];
+  var supportedSites = ["spotify", "soundcloud"];
 
   var Background = function(){};
 
