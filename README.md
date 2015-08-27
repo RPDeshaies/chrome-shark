@@ -16,8 +16,8 @@ Here's what the application looks like :
 ![Chrome Shark Interface](http://i.imgur.com/31bVo4X.jpg)
 
 ##Supports
- * Grooveshark
  * Spotify
+ * Soundcloud
 
 <br>
 <img src="http://grooveshark.com/webincludes/images/shareDefault200x200.png" alt="Grooveshark" width="75px">
