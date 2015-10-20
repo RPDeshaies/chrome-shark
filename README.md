@@ -5,7 +5,7 @@
 
 Chrome Shark is a Google Chrome extension that transform Grooveshark & Spotify into a great full screen music player to fit on your Television
 
-For more detail go to the [official website](http://tareck117.github.io/chrome-shark/)
+For more detail go to the [official website](http://rpdeshaies.github.io/chrome-shark/)
 
 ##How does it work
 
