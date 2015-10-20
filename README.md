@@ -19,10 +19,6 @@ Here's what the application looks like :
  * Spotify
  * Soundcloud
 
-<br>
-<img src="http://grooveshark.com/webincludes/images/shareDefault200x200.png" alt="Grooveshark" width="75px">
-<img src="http://upload.wikimedia.org/wikipedia/commons/8/8e/Spotify_logo_vertical_white.jpg" alt="Spotify" width="75px">
-
 
 ##Features
 - Fits perfectly for TVs
